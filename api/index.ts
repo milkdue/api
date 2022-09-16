@@ -1,10 +1,13 @@
-module.exports = (req: any, res: any) => {
-    const realIp = req.headers["x-real-ip"];
-    const result = {
-        ip: realIp,
-        body: req.body,
-        query: req.query
-    }
+const getIp = require("./apis/getIp");
+const getLocation = require("./apis/getLocation");
 
-    res.status(200).json(result);
+module.exports = (req: any, res: any) => {  
+    switch(req.body.method){
+        case 'getIp':
+            result = getIp(req, res);
+            break;
+        case 'getLocation':
+            result = getLocation(req, res);
+            break;
+    }
 }
