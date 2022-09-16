@@ -1,9 +1,3 @@
-/*
- * @Author: 可以清心
- * @Description: 
- * @Date: 2022-09-16 19:48:30
- * @LastEditTime: 2022-09-16 20:18:40
- */
 const getIp = require("../utils/getIp");
 
 module.exports = function(req, res){
@@ -13,7 +7,7 @@ module.exports = function(req, res){
 }
 
 
-async function sendLocation(ip, res){
+async function sendLocation(ip, resp){
     const res = await new Promise(resolve => {
         http.get(`http://whois.pconline.com.cn/ipJson.jsp?ip=${ip}`, resolve);
     })
@@ -27,5 +21,5 @@ async function sendLocation(ip, res){
     })
     
     let json = data.slice(39, -7);
-    res.status(200).json(JSON.parse(json));
+    resp.status(200).json(JSON.parse(json));
 }
