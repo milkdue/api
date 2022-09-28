@@ -9,5 +9,8 @@ module.exports = (req: any, res: any) => {
         case 'getLocation':
             getLocation(req, res);
             break;
+        case 'getVerificationCode':
+            getLocation(req, res);
+            break;
     }
 }
