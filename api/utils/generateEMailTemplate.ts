@@ -90,6 +90,7 @@ module.exports = function(code): string{
             height: 60px;
             width: 60px;
             resize: none;
+            margin-left: 6px;
             font-size: 30px;
             border: none;
             outline: none;
