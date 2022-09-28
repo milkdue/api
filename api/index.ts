@@ -1,5 +1,6 @@
 const getIp = require("./apis/getIp");
 const getLocation = require("./apis/getLocation");
+const getVerificationCode = require("./apis/getVerificationCode");
 
 module.exports = (req: any, res: any) => {  
     switch(req.body.method){
@@ -10,7 +11,7 @@ module.exports = (req: any, res: any) => {
             getLocation(req, res);
             break;
         case 'getVerificationCode':
-            getLocation(req, res);
+            getVerificationCode(req, res);
             break;
     }
 }
