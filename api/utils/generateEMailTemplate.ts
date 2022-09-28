@@ -88,7 +88,7 @@ module.exports = function(code): string{
         .button {
             color: #FE4F70;
             height: 60px;
-            width: 60px;
+            width: 50px;
             resize: none;
             margin-left: 6px;
             font-size: 30px;
