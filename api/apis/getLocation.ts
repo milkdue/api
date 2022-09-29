@@ -23,7 +23,8 @@ async function sendLocation(ip, resp){
     
     let json = data.slice(39, -7);
     resp.setHeader("Access-Control-Allow-Origin", "*");
-    resp.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+    resp.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); //访问控制允许报头 X-Requested-With: xhr请求
+    resp.setHeader('X-Powered-By', 'nodejs'); //自定义头信息，表示服务端用nodejs
     resp.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     resp.status(200).json({code: 200, data: JSON.parse(json)});
 }
