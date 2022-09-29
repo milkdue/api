@@ -23,5 +23,7 @@ async function sendLocation(ip, resp){
     
     let json = data.slice(39, -7);
     resp.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     resp.status(200).json({code: 200, data: JSON.parse(json)});
 }
