@@ -22,5 +22,5 @@ async function sendLocation(ip, resp){
     })
     
     let json = data.slice(39, -7);
-    resp.status(200).json(JSON.parse(json));
+    resp.status(200).json({code: 200, data: JSON.parse(json)});
 }
