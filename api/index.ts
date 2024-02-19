@@ -1,6 +1,13 @@
+/*
+ * @Author: 可以清心
+ * @Description: 
+ * @Date: 2024-02-19 18:56:21
+ * @LastEditTime: 2024-02-19 18:59:39
+ */
 const getIp = require("./apis/getIp");
 const getLocation = require("./apis/getLocation");
 const getVerificationCode = require("./apis/getVerificationCode");
+const getError = require("./apis/getError")
 
 module.exports = (req: any, res: any) => {  
     switch(req.body.method){
@@ -12,6 +19,9 @@ module.exports = (req: any, res: any) => {
             break;
         case 'getVerificationCode':
             getVerificationCode(req, res);
+            break;
+        case "error":
+            getError(res);
             break;
     }
 }
