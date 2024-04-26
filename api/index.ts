@@ -10,6 +10,7 @@ const getVerificationCode = require("./apis/getVerificationCode");
 const getError = require("./apis/getError");
 const getMessage = require("./apis/getMessage");
 const getList = require("./apis/getList");
+const getDeepList = require("./apis/getDeepList");
 
 module.exports = (req: any, res: any) => {  
     switch(req.body.method) {
@@ -30,6 +31,9 @@ module.exports = (req: any, res: any) => {
             break;
         case "list":
             getList(res);
+            break;
+        case "deep":
+            getDeepList(res);
             break;
     }
 }
